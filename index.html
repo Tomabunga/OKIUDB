@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="sample.css" type="text/css">
+<title>OkiuDB</title>
+</head>
+<body>
+ 
+<div id="app">
+    <h1>{{ message }}</h1>
+    <div>検索：<input type="text" v-model="search"></div>
+    <table>
+        <tr>
+            <th>科目番号</th>
+            <th class="e">科目</th>
+            <th>学部</th>
+            <th>学科</th>
+            <th>担当</th>
+            <th>曜日</th>
+            <th>時限</th>
+           <!--- <th>担当</th>
+            <th>実施形態</th>
+            <th>概要</th>
+            <th>備考</th>-->
+        </tr>
+        <tr v-for="(value, key) in search_tantou">
+            <td> {{key}} </td>
+            <td>{{value.kamoku}} </td>
+            <td> {{value.gakubu}} </td>
+            <td> {{value.gakka}} </td>
+            <td> {{value.tantou}}</td>
+            <td> {{value.niti}} </td>
+            <td> {{value.gen}} </td>
+            
+        </tr>
+        </table>
+        </div>
+        
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
