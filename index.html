@@ -15,46 +15,110 @@
     </header>
     <main>
         <div id="app">
-            <div class="search_container">検索：<input type="text" v-model="search"></div>
+            <div class="search_container">フリーワード：<input type="text" v-model="search"></div>
 
-            <input type="radio" id="one" value="class" v-model="searchGenre">
-            <label for="one">講義名</label>
+            <p>条件で絞る</p>
+            <p>
 
-            <input type="radio" id="two" value="teacher" v-model="searchGenre">
-            <label for="two">担当教員</label>
+                <input type="radio" id="s_one" class="radiobutton" value="season0" v-model="season">
+                <label for="s_one">共通</label>
 
-            <br>
-            <span>Picked: {{ searchGenre }}</span>
+                <input type="radio" id="s_two" value="season1" v-model="season">
+                <label for="s_two">前期</label>
+
+                <input type="radio" id="s_three" value="season2" v-model="season">
+                <label for="s_three">後期</label>
+
+            </p>
+
+            <p>
+
+                <input type="radio" id="d_mon" value="mon" v-model="days">
+                <label for="d_mon">月曜</label>
+
+                <input type="radio" id="d_tue" value="tue" v-model="days">
+                <label for="d_tue">火曜</label>
+
+                <input type="radio" id="d_wed" value="wed" v-model="days">
+                <label for="d_wed">水曜</label>
+
+                <input type="radio" id="d_thur" value="thur" v-model="days">
+                <label for="d_thur">木曜</label>
+
+                <input type="radio" id="d_fri" value="fri" v-model="days">
+                <label for="d_fri">金曜</label>
+
+                <input type="radio" id="d_sat" value="sat" v-model="days">
+                <label for="d_sat">土曜</label>
+            </p>
+
+            <p>
+
+                <input type="radio" id="h_1" value="1" v-model="hour">
+                <label for="h_1">１限</label>
+
+                <input type="radio" id="h_2" value="2" v-model="hour">
+                <label for="h_2">２限</label>
+
+                <input type="radio" id="h_3" value="3" v-model="hour">
+                <label for="h_3">３限</label>
+
+                <input type="radio" id="h_4" value="4" v-model="hour">
+                <label for="h_4">４限</label>
+
+                <input type="radio" id="h_5" value="5" v-model="hour">
+                <label for="h_5">５限</label>
+
+                <input type="radio" id="h_6" value="6" v-model="hour">
+                <label for="h_6">６限</label>
+
+                <input type="radio" id="h_7" value="7" v-model="hour">
+                <label for="h_7">７限</label>
+
+            </p>
+
+            <p>
+
+                <input type="radio" id="f_one" value="form0" v-model="form">
+                <label for="f_one">全ての授業形態</label>
+
+                <input type="radio" id="f_two" value="form1" v-model="form">
+                <label for="f_two">対面のみ</label>
+
+                <input type="radio" id="f_three" value="form2" v-model="form">
+                <label for="f_three">オンラインのみ</label>
+
+            </p>
+
+
 
             <table>
                 <tr>
+                    <div class="lavel">
+                        <th class="futa">科目番号</th>
+                        <th class="futa">科目</th>
+                        <th class="futa">学部/学科</th>
+                        <th class="futa">担当教員</th>
+                        <th class="futa">教室</th>
+                        <th class="futa">学期/時期</th>
+                    </div>
 
-                    <th class="futa">科目番号</th>
-                    <th class="futa">科目</th>
-                    <th class="futa">学部</th>
-                    <th class="futa">学科</th>
-                    <th class="futa">担当</th>
-                    <th class="futa">教室</th>
-                    <th class="futa">曜日</th>
-                    <th class="futa">時限</th>
-                    <!--- <th>担当</th>
-            <th>実施形態</th>
-            <th>概要</th>
-            <th>備考</th>
-            #FFE194-->
-                </tr>
-                <tr v-for="(value, key) in search_tantou">
-                    <td> {{key}} </td>
-                    <td>{{value.kamoku}} </td>
-                    <td> {{value.gakubu}} </td>
-                    <td> {{value.gakka}} </td>
-                    <td> {{value.tantou}}</td>
-                    <td> {{value.kyoushitsu}}</td>
-                    <td> {{value.niti}} </td>
-                    <td> {{value.gen}} </td>
 
                 </tr>
+
             </table>
+            <div class="table-box" v-for="(value, key) in search_kamoku">
+
+                <!-- <p> {{key}} </p> -->
+                <p> {{value.kamoku}} </p>
+                <p> {{value.gakubu}}<br>{{value.gakka}}</p>
+                <p> {{value.tantou}}</p>
+                <p> {{value.kyoushitsu}}</p>
+                <p> {{value.gakki}}<br>{{value.niti}}{{value.gen}}</p>
+
+
+            </div>
+
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>

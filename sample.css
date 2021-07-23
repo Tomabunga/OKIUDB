@@ -1,4 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+body{
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+
+.logo{
+  padding: 0;
+  font-size: 250%;
+  font-family: 'Ubuntu Mono', monospace;
+}
+li {
+  display: inline;
+  list-style-type: none;
+  }
+
+
+.search_container{
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid #3879D9;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  height: 2.3em;
+  width: 500px;
+  overflow: hidden;
+}
+.search_container input[type="text"]{
+  border: none;
+  height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+
+
+/* ラジオボタン */
+
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+label {
+  background-color: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1.5px solid;
+  border-color: black;
+}
+input[type=radio]:checked + label {
+  background-color: orange;
+  color: #fff;
+  border:1px solid;
+  border-color: #fff;
+  
+}
+
+
 table{
   width: 100%;
   border-collapse: collapse;
@@ -23,34 +81,17 @@ table tr:nth-child(odd){
     font-size: 15px;
     color:#eee;
   }
-body{
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-}
 
-.search_container{
-  position: relative;
-  box-sizing: border-box;
-  border: 2px solid #3879D9;
-  display: block;
-  padding: 3px 10px;
-  border-radius: 3px;
-  height: 2.3em;
-  width: 265px;
-  overflow: hidden;
+/* テーブルデザイン */
+.table-box {
+  margin-top: 10px;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: #303030;
+  background-color: #DDDDDD;
 }
-.search_container input[type="text"]{
-  border: none;
-  height: 2.0em;
+.table-box p{
+  padding-left: 20px;
 }
-.search_container input[type="text"]:focus {
-  outline: 0;
-}
-.logo{
-  padding: 0;
-  font-size: 250%;
-  font-family: 'Ubuntu Mono', monospace;
-}
-li {
-  display: inline;
-  list-style-type: none;
-  }
