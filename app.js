@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
     message: '',
     search:'',
-    cities: []
+    cities: [],
     },
     methods: {
         async getCities() {
@@ -20,5 +20,7 @@ var app = new Vue({
             return value.tantou.includes(this.search)
         　})
     　}
-    }
+    },
+    
+    
 })

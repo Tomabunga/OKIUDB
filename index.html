@@ -3,26 +3,35 @@
 <head>
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="sample.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 rel="stylesheet">
 <title>OkiuDB</title>
 </head>
+
 <body>
- 
+ <header>
+         <li class="logo">OKIUDB</li>
+        <li>operated by Odo's seminar.</li>
+ </header>
+ <main>
 <div id="app">
-    <h1>{{ message }}</h1>
-    <div>検索：<input type="text" v-model="search"></div>
+    <h1 >{{ message }}</h1>
+    <div class="search_container">検索：<input type="text" v-model="search"></div>
+    
     <table>
         <tr>
-            <th>科目番号</th>
-            <th class="e">科目</th>
-            <th>学部</th>
-            <th>学科</th>
-            <th>担当</th>
-            <th>曜日</th>
-            <th>時限</th>
+            
+            <th class="futa">科目番号</th>
+            <th class="futa">科目</th>
+            <th class="futa">学部</th>
+            <th class="futa">学科</th>
+            <th class="futa">担当</th>
+            <th class="futa">曜日</th>
+            <th class="futa">時限</th>
            <!--- <th>担当</th>
             <th>実施形態</th>
             <th>概要</th>
-            <th>備考</th>-->
+            <th>備考</th>
+            #FFE194-->
         </tr>
         <tr v-for="(value, key) in search_tantou">
             <td> {{key}} </td>
@@ -36,7 +45,7 @@
         </tr>
         </table>
         </div>
-        
+    </main>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="app.js"></script>
