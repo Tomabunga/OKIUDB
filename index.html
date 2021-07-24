@@ -3,7 +3,8 @@
 
 <head>
     <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="sample.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
@@ -19,14 +20,15 @@
     <header>
         <div class="logo">
             <h1>OKIUDB</h1>
-            <p>operated by Odo's seminar. 😉Beta1.0😉</p>
+            <p>created by Bunga, Kei and Nagi. 😉Beta1.0😉</p>
         </div>
     </header>
     <main>
         <div class="container-fluid">
             <div class="row">
                 <div id="app">
-                    <!--<div class="search_container">--><input placeholder="科目 教員 学部学科など入力：" type="text" v-model="search">
+                    <!--<div class="search_container">--><input placeholder="科目 教員 学部学科など入力：" type="text"
+                        v-model="search">
                     <!--</div>-->
 
                     <p>条件で絞る</p>
@@ -105,6 +107,10 @@
 
                     </p>
 
+                    <p>※2021年7月24日現在、沖縄国際大学HPからExcelデータで取得。<br>
+                        ※時間割データは2021年度前期・後期・通年分です。<br>
+                        ※時間割は変更の可能性があります。学内の掲示板又は本学ポータルで最新の情報を確認して下さい。</p>
+
                     <div class="container">
                         <div class="row">
                             <div class="col-md-2">科目 </div>
@@ -133,14 +139,15 @@
 
                     </table> -->
 
+
                     <div class="table-box" v-for="(value, key) in search_kamoku">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-2">{{value.kamoku}} </div>
-                                <div class="col-xs-4 col-md-2"> {{value.gakubu}}{{value.gakka}}</div>
+                                <div class="col-xs-4 col-md-2"> {{value.gakubu}} {{value.gakka}}</div>
                                 <div class="col-xs-4 col-md-2"> {{value.tantou}}</div>
                                 <div class="col-xs-4 col-md-2">{{value.kyoushitsu}}</div>
-                                <div class="col-md-2">{{value.gakki}}{{value.niti}}{{value.gen}}</div>
+                                <div class="col-md-2">{{value.gakki}} {{value.niti}}x{{value.gen}}</div>
                                 <div class="col-md-2">{{value.bikou}}</div>
                             </div>
                         </div>
