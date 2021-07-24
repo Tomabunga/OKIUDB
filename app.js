@@ -5,11 +5,14 @@ var app = new Vue({
         cities: [],
 
         season: 'seasonall',
-        days: ["月", "火", "水", "木", "金", "土"],
-        hour: [1, 2, 3, 4, 5, 6, 7],
+        days: [],
+        hour: [],
         form: " ",
+
         formResult: '',
         seasonResult: '',
+        hourResult: '',
+        daysResult: ''
 
     },
     methods: {
@@ -44,9 +47,20 @@ var app = new Vue({
                     this.seasonResult = value.gakki.match('(?=.)')
                 }
 
+                if (this.hour.length) {
+                    this.hourResult = value.gen.match('[' + this.hour.join('') + ']')
+                } else {
+                    this.hourResult = value.gen.match('[1234567]')
+                }
+
+                if (this.days.length) {
+                    this.daysResult = value.niti.match('[' + this.days.join('') + ']')
+                } else {
+                    this.daysResult = value.niti.match('[月火水木金土]')
+                }
+
                 return this.formResult && this.seasonResult &&
-                    value.gen.match('[' + this.hour.join('') + ']') &&
-                    value.niti.match('[' + this.days.join('') + ']') &&
+                    this.hourResult && this.daysResult &&
                     (value.kamoku.includes(this.search) ||
                         value.gakubu.includes(this.search) ||
                         value.gakka.includes(this.search) ||
