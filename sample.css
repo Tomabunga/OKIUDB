@@ -1,4 +1,91 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@200&display=swap');
+
+body{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+.logo h1 {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: 'Tourney', cursive;
+
+}
+.logo p{
+  text-align: center;
+  font-size:1rem;
+}
+#ver{
+  line-height: 2rem;
+}
+li {
+  display: inline;
+  list-style-type: none;
+  }
+
+
+  input{
+    border: 2px solid #ffc107;
+  height: 2.0em;
+  width: 100%;
+  }
+/*
+.search_container{
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid #3879D9;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  height: 2.3em;
+  width: 500px;
+  overflow: hidden;
+}
+.search_container input[type="text"]{
+  border: 2px solid #146314;
+  height: 2.0em;
+  width: auto;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+*/
+
+/* ラジオボタン */
+
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+
+input[type=checkbox] {
+display: none; /* ラジオボタンを非表示にする */
+}
+
+label {
+  background-color: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1.5px solid;
+  border-color: black;
+}
+
+input[type=radio]:checked + label {
+  background-color: orange;
+  color: #fff;
+  border:1px solid;
+  border-color: #fff;
+}
+
+input[type=checkbox]:checked + label {
+  background-color: orange;
+  color: #fff;
+  border:1px solid;
+  border-color: #fff;
+}
+
+
 table{
   width: 100%;
   border-collapse: collapse;
@@ -23,34 +110,50 @@ table tr:nth-child(odd){
     font-size: 15px;
     color:#eee;
   }
-body{
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-}
 
-.search_container{
+/* テーブルデザイン */
+.table-box {
+  margin-top: 10px;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: #303030;
+  background-color: #DDDDDD;
+}
+.table-box p{
+  padding-left: 20px;
+}
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #3f98ef;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+#page_top a{
   position: relative;
-  box-sizing: border-box;
-  border: 2px solid #3879D9;
   display: block;
-  padding: 3px 10px;
-  border-radius: 3px;
-  height: 2.3em;
-  width: 265px;
-  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
 }
-.search_container input[type="text"]{
-  border: none;
-  height: 2.0em;
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
 }
-.search_container input[type="text"]:focus {
-  outline: 0;
-}
-.logo{
-  padding: 0;
-  font-size: 250%;
-  font-family: 'Ubuntu Mono', monospace;
-}
-li {
-  display: inline;
-  list-style-type: none;
-  }
