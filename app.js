@@ -1,11 +1,16 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: '',
         search: '',
         cities: [],
 
-        searchGenre: 'class',
+        season: 'seasonall',
+        days: ["月", "火", "水", "木", "金", "土"],
+        hour: [1, 2, 3, 4, 5, 6, 7],
+        form: " ",
+        formResult: '',
+        seasonResult: '',
+
     },
     methods: {
         async getCities() {
@@ -16,16 +21,36 @@ var app = new Vue({
     mounted() {
         this.getCities()
     },
+
     computed: {
         search_kamoku() {
             return this.cities.filter(value => {
-                return value.kamoku.includes(this.search) ||
-                    value.gakubu.includes(this.search) ||
-                    value.gakka.includes(this.search) ||
-                    value.tantou.includes(this.search) ||
-                    value.kyoushitsu.includes(this.search) ||
-                    value.niti.includes(this.search) ||
-                    value.gen.includes(this.search)
+
+                if (this.form == "online") {
+                    this.formResult = value.kyoushitsu.match('^(?=.*ｵﾝﾗｲﾝ授業).*$')
+                } else if (this.form == "real") {
+                    this.formResult = value.kyoushitsu.match('^(?!.*ｵﾝﾗｲﾝ授業).*$')
+                } else {
+                    this.formResult = value.kyoushitsu.match('(?=.)')
+                }
+
+                if (this.season == "season0") {
+                    this.seasonResult = value.gakki.match('^(?=.*通年).*$')
+                } else if (this.season == "season1") {
+                    this.seasonResult = value.gakki.match('^(?=.*前期).*$')
+                } else if (this.season == "season2") {
+                    this.seasonResult = value.gakki.match('^(?=.*後期).*$')
+                } else {
+                    this.seasonResult = value.gakki.match('(?=.)')
+                }
+
+                return this.formResult && this.seasonResult &&
+                    value.gen.match('[' + this.hour.join('') + ']') &&
+                    value.niti.match('[' + this.days.join('') + ']') &&
+                    (value.kamoku.includes(this.search) ||
+                        value.gakubu.includes(this.search) ||
+                        value.gakka.includes(this.search) ||
+                        value.tantou.includes(this.search))
             })
         }
     },

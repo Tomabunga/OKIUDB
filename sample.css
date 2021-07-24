@@ -41,6 +41,11 @@ li {
 input[type=radio] {
 display: none; /* ラジオボタンを非表示にする */
 }
+
+input[type=checkbox] {
+display: none; /* ラジオボタンを非表示にする */
+}
+
 label {
   background-color: none;
   padding: 10px 20px;
@@ -48,12 +53,19 @@ label {
   border: 1.5px solid;
   border-color: black;
 }
+
 input[type=radio]:checked + label {
   background-color: orange;
   color: #fff;
   border:1px solid;
   border-color: #fff;
-  
+}
+
+input[type=checkbox]:checked + label {
+  background-color: orange;
+  color: #fff;
+  border:1px solid;
+  border-color: #fff;
 }
 
 

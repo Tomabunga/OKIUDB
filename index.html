@@ -15,78 +15,89 @@
     </header>
     <main>
         <div id="app">
-            <div class="search_container">フリーワード：<input type="text" v-model="search"></div>
+            <div class="search_container">科目 教員 学部学科など入力：<input type="text" v-model="search"></div>
 
             <p>条件で絞る</p>
+            <select v-model="selected">
+                <option disabled value="">学期</option>
+                <option>すべての学期</option>
+                <option>通年</option>
+                <option>前期</option>
+                <option>後期</option>
+            </select>
+            <span>Selected: {{ selected }}</span>
+
             <p>
+                <input type="radio" id="s_one" value="seasonall" v-model="season">
+                <label for="s_one">すべての学期</label>
 
-                <input type="radio" id="s_one" class="radiobutton" value="season0" v-model="season">
-                <label for="s_one">共通</label>
+                <input type="radio" id="s_two" value="season0" v-model="season">
+                <label for="s_two">通年</label>
 
-                <input type="radio" id="s_two" value="season1" v-model="season">
-                <label for="s_two">前期</label>
+                <input type="radio" id="s_three" value="season1" v-model="season">
+                <label for="s_three">前期</label>
 
-                <input type="radio" id="s_three" value="season2" v-model="season">
-                <label for="s_three">後期</label>
+                <input type="radio" id="s_four" value="season2" v-model="season">
+                <label for="s_four">後期</label>
 
             </p>
 
             <p>
 
-                <input type="radio" id="d_mon" value="mon" v-model="days">
+                <input type="radio" id="f_one" value=" " v-model="form">
+                <label for="f_one">すべての授業形態</label>
+
+                <input type="radio" id="f_two" value="real" v-model="form">
+                <label for="f_two">対面</label>
+
+                <input type="radio" id="f_three" value="online" v-model="form">
+                <label for="f_three">オンライン</label>
+
+            </p>
+
+            <p>
+
+                <input type="checkbox" id="d_mon" value="月" v-model="days">
                 <label for="d_mon">月曜</label>
 
-                <input type="radio" id="d_tue" value="tue" v-model="days">
+                <input type="checkbox" id="d_tue" value="火" v-model="days">
                 <label for="d_tue">火曜</label>
 
-                <input type="radio" id="d_wed" value="wed" v-model="days">
+                <input type="checkbox" id="d_wed" value="水" v-model="days">
                 <label for="d_wed">水曜</label>
 
-                <input type="radio" id="d_thur" value="thur" v-model="days">
+                <input type="checkbox" id="d_thur" value="木" v-model="days">
                 <label for="d_thur">木曜</label>
 
-                <input type="radio" id="d_fri" value="fri" v-model="days">
+                <input type="checkbox" id="d_fri" value="金" v-model="days">
                 <label for="d_fri">金曜</label>
 
-                <input type="radio" id="d_sat" value="sat" v-model="days">
+                <input type="checkbox" id="d_sat" value="土" v-model="days">
                 <label for="d_sat">土曜</label>
             </p>
 
             <p>
 
-                <input type="radio" id="h_1" value="1" v-model="hour">
+                <input type="checkbox" id="h_1" value="1" v-model="hour">
                 <label for="h_1">１限</label>
 
-                <input type="radio" id="h_2" value="2" v-model="hour">
+                <input type="checkbox" id="h_2" value="2" v-model="hour">
                 <label for="h_2">２限</label>
 
-                <input type="radio" id="h_3" value="3" v-model="hour">
+                <input type="checkbox" id="h_3" value="3" v-model="hour">
                 <label for="h_3">３限</label>
 
-                <input type="radio" id="h_4" value="4" v-model="hour">
+                <input type="checkbox" id="h_4" value="4" v-model="hour">
                 <label for="h_4">４限</label>
 
-                <input type="radio" id="h_5" value="5" v-model="hour">
+                <input type="checkbox" id="h_5" value="5" v-model="hour">
                 <label for="h_5">５限</label>
 
-                <input type="radio" id="h_6" value="6" v-model="hour">
+                <input type="checkbox" id="h_6" value="6" v-model="hour">
                 <label for="h_6">６限</label>
 
-                <input type="radio" id="h_7" value="7" v-model="hour">
+                <input type="checkbox" id="h_7" value="7" v-model="hour">
                 <label for="h_7">７限</label>
-
-            </p>
-
-            <p>
-
-                <input type="radio" id="f_one" value="form0" v-model="form">
-                <label for="f_one">全ての授業形態</label>
-
-                <input type="radio" id="f_two" value="form1" v-model="form">
-                <label for="f_two">対面のみ</label>
-
-                <input type="radio" id="f_three" value="form2" v-model="form">
-                <label for="f_three">オンラインのみ</label>
 
             </p>
 
