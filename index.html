@@ -18,14 +18,6 @@
             <div class="search_container">科目 教員 学部学科など入力：<input type="text" v-model="search"></div>
 
             <p>条件で絞る</p>
-            <select v-model="selected">
-                <option disabled value="">学期</option>
-                <option>すべての学期</option>
-                <option>通年</option>
-                <option>前期</option>
-                <option>後期</option>
-            </select>
-            <span>Selected: {{ selected }}</span>
 
             <p>
                 <input type="radio" id="s_one" value="seasonall" v-model="season">
@@ -100,7 +92,6 @@
                 <label for="h_7">７限</label>
 
             </p>
-
 
 
             <table>
