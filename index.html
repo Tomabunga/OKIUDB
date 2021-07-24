@@ -3,125 +3,154 @@
 
 <head>
     <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="sample.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
     <title>OkiuDB</title>
 </head>
 
 <body>
+    <div id="page_top">
+        <a href="#"></a>
+    </div>
+
     <header>
-        <li class="logo">OKIUDB</li>
-        <li>operated by Odo's seminar.</li>
+        <div class="logo">
+            <h1>OKIUDB</h1>
+            <p>operated by Odo's seminar. 😉Beta1.0😉</p>
+        </div>
     </header>
     <main>
-        <div id="app">
-            <div class="search_container">科目 教員 学部学科など入力：<input type="text" v-model="search"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="app">
+                    <!--<div class="search_container">--><input placeholder="科目 教員 学部学科など入力：" type="text" v-model="search">
+                    <!--</div>-->
 
-            <p>条件で絞る</p>
+                    <p>条件で絞る</p>
 
-            <p>
-                <input type="radio" id="s_one" value="seasonall" v-model="season">
-                <label for="s_one">すべての学期</label>
+                    <p>
+                        <input type="radio" id="s_one" value="seasonall" v-model="season">
+                        <label for="s_one">すべての学期</label>
 
-                <input type="radio" id="s_two" value="season0" v-model="season">
-                <label for="s_two">通年</label>
+                        <input type="radio" id="s_two" value="season0" v-model="season">
+                        <label for="s_two">通年</label>
 
-                <input type="radio" id="s_three" value="season1" v-model="season">
-                <label for="s_three">前期</label>
+                        <input type="radio" id="s_three" value="season1" v-model="season">
+                        <label for="s_three">前期</label>
 
-                <input type="radio" id="s_four" value="season2" v-model="season">
-                <label for="s_four">後期</label>
+                        <input type="radio" id="s_four" value="season2" v-model="season">
+                        <label for="s_four">後期</label>
 
-            </p>
+                    </p>
 
-            <p>
+                    <p>
 
-                <input type="radio" id="f_one" value=" " v-model="form">
-                <label for="f_one">すべての授業形態</label>
+                        <input type="radio" id="f_one" value=" " v-model="form">
+                        <label for="f_one">すべての授業形態</label>
 
-                <input type="radio" id="f_two" value="real" v-model="form">
-                <label for="f_two">対面</label>
+                        <input type="radio" id="f_two" value="real" v-model="form">
+                        <label for="f_two">対面</label>
 
-                <input type="radio" id="f_three" value="online" v-model="form">
-                <label for="f_three">オンライン</label>
+                        <input type="radio" id="f_three" value="online" v-model="form">
+                        <label for="f_three">オンライン</label>
 
-            </p>
+                    </p>
 
-            <p>
+                    <p>
 
-                <input type="checkbox" id="d_mon" value="月" v-model="days">
-                <label for="d_mon">月曜</label>
+                        <input type="checkbox" id="d_mon" value="月" v-model="days">
+                        <label for="d_mon">月曜</label>
 
-                <input type="checkbox" id="d_tue" value="火" v-model="days">
-                <label for="d_tue">火曜</label>
+                        <input type="checkbox" id="d_tue" value="火" v-model="days">
+                        <label for="d_tue">火曜</label>
 
-                <input type="checkbox" id="d_wed" value="水" v-model="days">
-                <label for="d_wed">水曜</label>
+                        <input type="checkbox" id="d_wed" value="水" v-model="days">
+                        <label for="d_wed">水曜</label>
 
-                <input type="checkbox" id="d_thur" value="木" v-model="days">
-                <label for="d_thur">木曜</label>
+                        <input type="checkbox" id="d_thur" value="木" v-model="days">
+                        <label for="d_thur">木曜</label>
 
-                <input type="checkbox" id="d_fri" value="金" v-model="days">
-                <label for="d_fri">金曜</label>
+                        <input type="checkbox" id="d_fri" value="金" v-model="days">
+                        <label for="d_fri">金曜</label>
 
-                <input type="checkbox" id="d_sat" value="土" v-model="days">
-                <label for="d_sat">土曜</label>
-            </p>
+                        <input type="checkbox" id="d_sat" value="土" v-model="days">
+                        <label for="d_sat">土曜</label>
+                    </p>
 
-            <p>
+                    <p>
 
-                <input type="checkbox" id="h_1" value="1" v-model="hour">
-                <label for="h_1">１限</label>
+                        <input type="checkbox" id="h_1" value="1" v-model="hour">
+                        <label for="h_1">１限</label>
 
-                <input type="checkbox" id="h_2" value="2" v-model="hour">
-                <label for="h_2">２限</label>
+                        <input type="checkbox" id="h_2" value="2" v-model="hour">
+                        <label for="h_2">２限</label>
 
-                <input type="checkbox" id="h_3" value="3" v-model="hour">
-                <label for="h_3">３限</label>
+                        <input type="checkbox" id="h_3" value="3" v-model="hour">
+                        <label for="h_3">３限</label>
 
-                <input type="checkbox" id="h_4" value="4" v-model="hour">
-                <label for="h_4">４限</label>
+                        <input type="checkbox" id="h_4" value="4" v-model="hour">
+                        <label for="h_4">４限</label>
 
-                <input type="checkbox" id="h_5" value="5" v-model="hour">
-                <label for="h_5">５限</label>
+                        <input type="checkbox" id="h_5" value="5" v-model="hour">
+                        <label for="h_5">５限</label>
 
-                <input type="checkbox" id="h_6" value="6" v-model="hour">
-                <label for="h_6">６限</label>
+                        <input type="checkbox" id="h_6" value="6" v-model="hour">
+                        <label for="h_6">６限</label>
 
-                <input type="checkbox" id="h_7" value="7" v-model="hour">
-                <label for="h_7">７限</label>
+                        <input type="checkbox" id="h_7" value="7" v-model="hour">
+                        <label for="h_7">７限</label>
 
-            </p>
+                    </p>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2">科目 </div>
+                            <div class="col-s-4 col-md-2">学部・学科</div>
+                            <div class="col-s-4 col-md-2">担当教員</div>
+                            <div class="col-s-4 col-md-2">教室</div>
+                            <div class="col-md-2">学期・時期</div>
+                            <div class="col-md-2">備考</div>
+
+                        </div>
+                    </div>
+                    <!-- <table>
+                        <tr>
+                            <div class="lavel">
+                                <th class="futa">科目番号</th>
+                                <th class="futa">科目</th>
+                                <th class="futa">学部/学科</th>
+                                <th class="futa">担当教員</th>
+                                <th class="futa">教室</th>
+                                <th class="futa">学期/時期</th>
+                                <th class="futa">備考</th>
+                            </div>
 
 
-            <table>
-                <tr>
-                    <div class="lavel">
-                        <th class="futa">科目番号</th>
-                        <th class="futa">科目</th>
-                        <th class="futa">学部/学科</th>
-                        <th class="futa">担当教員</th>
-                        <th class="futa">教室</th>
-                        <th class="futa">学期/時期</th>
+                        </tr>
+
+                    </table> -->
+
+                    <div class="table-box" v-for="(value, key) in search_kamoku">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2">{{value.kamoku}} </div>
+                                <div class="col-xs-4 col-md-2"> {{value.gakubu}}{{value.gakka}}</div>
+                                <div class="col-xs-4 col-md-2"> {{value.tantou}}</div>
+                                <div class="col-xs-4 col-md-2">{{value.kyoushitsu}}</div>
+                                <div class="col-md-2">{{value.gakki}}{{value.niti}}{{value.gen}}</div>
+                                <div class="col-md-2">{{value.bikou}}</div>
+                            </div>
+                        </div>
                     </div>
 
 
-                </tr>
-
-            </table>
-            <div class="table-box" v-for="(value, key) in search_kamoku">
-
-                <!-- <p> {{key}} </p> -->
-                <p> {{value.kamoku}} </p>
-                <p> {{value.gakubu}}<br>{{value.gakka}}</p>
-                <p> {{value.tantou}}</p>
-                <p> {{value.kyoushitsu}}</p>
-                <p> {{value.gakki}}<br>{{value.niti}}{{value.gen}}</p>
-
-
+                </div>
             </div>
-
         </div>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
